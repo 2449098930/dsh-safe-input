@@ -1,0 +1,61 @@
+{
+  "name": "dsh-safe-input",
+  "version": "1.0.0",
+  "description": "DSH Web 输入框上方的安全打字板：用普通文本框打字绕开富文本编辑器的输入法组词乱码，一键填入草稿或直接发送。 / A plain-text typing pad above the DSH Web composer that works around CJK IME composition corruption in the rich-text editor.",
+  "type": "module",
+  "main": "lib/index.js",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "deepseek",
+    "ime",
+    "input-method",
+    "cjk",
+    "pinyin",
+    "composer",
+    "input"
+  ],
+  "license": "MIT",
+  "author": "dsh-safe-input contributors",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/2449098930/dsh-safe-input.git"
+  },
+  "bugs": {
+    "url": "https://github.com/2449098930/dsh-safe-input/issues"
+  },
+  "homepage": "https://github.com/2449098930/dsh-safe-input#readme",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

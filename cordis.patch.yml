@@ -1,0 +1,8 @@
+# dsh-safe-input bundle patch.
+#
+# 在 web profile 的层栈里插入一行宿主插件；浏览器那一半由 package.json 的
+# dsh.client 清单（exports["./client"] -> lib/client.js）加载。
+
+- insert:
+    - id: safe-input
+      name: 'dsh-safe-input'
