@@ -1,6 +1,6 @@
-{
+﻿{
   "name": "dsh-safe-input",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "DSH Web 输入框上方的安全打字板：用普通文本框打字绕开富文本编辑器的输入法组词乱码，一键填入草稿或直接发送。 / A plain-text typing pad above the DSH Web composer that works around CJK IME composition corruption in the rich-text editor.",
   "type": "module",
   "main": "lib/index.js",
@@ -59,3 +59,4 @@
     "access": "public"
   }
 }
+
