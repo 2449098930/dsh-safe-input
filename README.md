@@ -55,12 +55,15 @@ DSH 官方仓库里已有多个同类报告：
 需要 DSH Web 宿主 **≥ 0.1.2-rc.1**。
 
 ```powershell
-# 从 npm 安装
-dsh plugin --profile web add dsh-safe-input
+# ① 一行安装（推荐：走 jsDelivr 镜像，国内可直连）
+dsh plugin --profile web add https://cdn.jsdelivr.net/gh/2449098930/dsh-safe-input@v1.1.0/dsh-safe-input-1.1.0.tgz
 
-# 或从 GitHub Release 安装（无需 npm 账号）
-dsh plugin --profile web add https://github.com/<owner>/dsh-safe-input/releases/download/v1.1.0/dsh-safe-input-1.1.0.tgz
+# ② 或克隆后本地链接（想改代码、即时生效就用这种）
+git clone https://github.com/2449098930/dsh-safe-input.git
+dsh plugin --profile web add link:C:\path\to\dsh-safe-input
 ```
+
+> 尚未发布到 npm，所以 `dsh plugin --profile web add dsh-safe-input` 现在会 404；用上面两种方式之一。
 
 装完**重启 `dsh web`**（关掉当前界面，重新运行 `dsh web`），然后在输入框上方就能看到「安全输入板」。
 
@@ -106,7 +109,7 @@ dsh plugin --profile web add link:C:\path\to\dsh-safe-input
 **dsh-safe-input** adds a plain-text typing pad above the DSH Web composer. In some IME × browser combinations the built-in rich-text composer interrupts CJK composition, producing garbled input (leftover pinyin, split characters). This plugin registers a native `<textarea>` in the official `conversation.input.dock` slot: type there, then **move it into the composer** (draft is set, composer focused, caret at the end — paste or drop images there afterwards) or **send directly**. Ctrl+Enter inside the pad moves the text into the composer. No network, no theme overrides, no third-party runtime dependencies.
 
 ```powershell
-dsh plugin --profile web add dsh-safe-input
+dsh plugin --profile web add https://cdn.jsdelivr.net/gh/2449098930/dsh-safe-input@v1.1.0/dsh-safe-input-1.1.0.tgz
 ```
 
 ## 更新记录
